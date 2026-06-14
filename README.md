@@ -2,6 +2,10 @@
 
 A modern personal portfolio website developed using Flask, HTML, CSS, JavaScript, and SQLite to showcase my skills, internships, projects, certifications, and professional profile.
 
+## Live Demo
+
+🔗 https://personal-portfolio-64x2.onrender.com/
+
 ## Features
 
 - Responsive and modern UI
