@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sravanthi Portfolio</title>
+
+
+<link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+    Sravanthi
+</div>
+
+<ul>
+
+    <li><a href="#home">Home</a></li>
+
+    <li><a href="#about">About</a></li>
+
+    <li><a href="#skills">Skills</a></li>
+
+    <li><a href="#experience">Experience</a></li>
+
+    <li><a href="#projects">Projects</a></li>
+
+    <li><a href="#contact">Contact</a></li>
+
+</ul>
+
+
+</nav>
+
+<section id="home" class="hero">
+
+
+<div class="hero-left">
+
+    <h3>Hello, I'm</h3>
+
+    <h1>Sravanthi Polamarasetti</h1>
+
+    <h2>
+        <span class="typing"></span>
+    </h2>
+
+    <p>
+        Passionate Computer Science Engineering student interested in
+        Full Stack Development, ServiceNow, Networking and Artificial Intelligence.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="{{ url_for('static', filename='resume.pdf') }}"
+           class="btn"
+           download>
+
+            Download Resume
+
+        </a>
+
+        <a href="#projects"
+           class="btn secondary">
+
+            View Projects
+
+        </a>
+
+    </div>
+
+    <div class="socials">
+
+        <a href="https://github.com/sravanthi9392-hub"
+           target="_blank">
+
+            <i class="fab fa-github"></i>
+
+        </a>
+
+        <a href="mailto:polamsettiramu@gmail.com">
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+        <a href="https://linkedin.com/in/sravanthi-polamarasetti-72148029a"
+           target="_blank">
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+    </div>
+
+</div>
+
+<div class="hero-right">
+
+    <img src="{{ url_for('static', filename='profile.jpeg') }}"
+         alt="Profile">
+
+</div>
+
+
+</section>
+
+<section id="about">
+
+
+<h2 class="section-title">
+    About Me
+</h2>
+
+<div class="glass-card">
+
+    <p>
+        I am Sravanthi Polamarasetti, a Computer Science and Engineering student
+        at MVGR College of Engineering.
+    </p>
+
+    <p>
+        My academic journey has helped me build strong foundations in
+        Programming, Networking, Databases and Web Development.
+    </p>
+
+    <p>
+        I am certified in ServiceNow CSA and have completed multiple internships
+        in Artificial Intelligence, Machine Learning and Full Stack Development.
+    </p>
+
+    <p>
+        I enjoy developing real-world applications and continuously learning
+        modern technologies to improve my technical expertise.
+    </p>
+
+    <p>
+        As a Class Representative, I have developed leadership,
+        communication and teamwork skills while balancing academics and projects.
+    </p>
+
+</div>
+
+
+</section>
+
+<section id="skills">
+
+
+<h2 class="section-title">
+    Skills
+</h2>
+
+<div class="skills-grid">
+
+    <div class="skill-box">
+
+        <h3>Programming Languages</h3>
+
+        <ul>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C</li>
+            <li>C++</li>
+        </ul>
+
+    </div>
+
+    <div class="skill-box">
+
+        <h3>Web Technologies</h3>
+
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Flask</li>
+        </ul>
+
+    </div>
+
+    <div class="skill-box">
+
+        <h3>Database Skills</h3>
+
+        <ul>
+            <li>MySQL</li>
+            <li>SQLite</li>
+        </ul>
+
+    </div>
+
+    <div class="skill-box">
+
+        <h3>Tools & Platforms</h3>
+
+        <ul>
+            <li>ServiceNow</li>
+            <li>GitHub</li>
+            <li>VS Code</li>
+            <li>Figma</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section id="experience">
+
+
+<h2 class="section-title">
+    Experience
+</h2>
+
+<div class="timeline">
+
+    <div class="timeline-item">
+
+        <h3>AI-ML Virtual Intern</h3>
+
+        <p>AICTE EduSkills - Google for Developers</p>
+
+        <p>Apr 2026 - Jun 2026</p>
+
+        <p>
+            Worked with TensorFlow, Neural Networks and Image Classification.
+        </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+        <h3>Java Full Stack Intern</h3>
+
+        <p>EduSkills Academy</p>
+
+        <p>10 Weeks Internship</p>
+
+        <p>
+            Learned Java, Spring Boot, MySQL, HTML, CSS and JavaScript.
+        </p>
+
+    </div>
+
+    <div class="timeline-item">
+
+        <h3>ServiceNow System Administrator Intern</h3>
+
+        <p>SmartBridge</p>
+
+        <p>Currently Ongoing</p>
+
+        <p>
+            Working with Forms, Client Scripts, Business Rules and Service Portal.
+        </p>
+
+    </div>
+
+</div>
+
+
+</section>
+
+<section id="projects">
+
+
+<h2 class="section-title">
+    Projects
+</h2>
+
+<div class="project-grid">
+
+    {% for project in projects %}
+
+    <div class="project-card">
+
+        <h3>{{ project['title'] }}</h3>
+
+        <p>{{ project['description'] }}</p>
+
+        <span>{{ project['technologies'] }}</span>
+
+        <br><br>
+
+        <a href="{{ project['github'] }}"
+           target="_blank"
+           class="btn">
+
+            GitHub
+
+        </a>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+
+</section>
+
+<section id="contact">
+
+
+<h2 class="section-title">
+    Contact
+</h2>
+
+<div class="glass-card">
+
+    <p>📧 Email : polamsettiramu@gmail.com</p>
+
+    <p>📱 Phone : 9392905071</p>
+
+    <p>📍 Kothavalasa, Vizianagaram, Andhra Pradesh</p>
+
+    <p>
+        GitHub :
+        <a href="https://github.com/sravanthi9392-hub"
+           target="_blank">
+
+            github.com/sravanthi9392-hub
+
+        </a>
+    </p>
+
+    <p>
+        LinkedIn :
+        <a href="https://linkedin.com/in/sravanthi-polamarasetti-72148029a"
+           target="_blank">
+
+            Sravanthi Polamarasetti
+
+        </a>
+    </p>
+
+</div>
+
+
+</section>
+
+<footer>
+
+
+<h3>Sravanthi Polamarasetti</h3>
+
+<p>Computer Science Engineering Student</p>
+
+
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
